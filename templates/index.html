@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato Data Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Zomato Data Analysis</h1>
+        
+        <!-- Filters -->
+        <div class="filters">
+            <div>
+                <label for="cuisineFilter">Restaurant Type:</label>
+                <select id="cuisineFilter">
+                    <option value="all">All</option>
+                </select>
+            </div>
+            <div>
+                <label for="deliveryFilter">Online Delivery:</label>
+                <select id="deliveryFilter">
+                    <option value="all">All</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div>
+                <label for="costMin">Min Cost (for two):</label>
+                <input type="number" id="costMin" placeholder="e.g., 100" min="0">
+            </div>
+            <div>
+                <label for="costMax">Max Cost (for two):</label>
+                <input type="number" id="costMax" placeholder="e.g., 1000" min="0">
+            </div>
+            <button onclick="updateCharts()">Apply Filters</button>
+        </div>
+        
+        <!-- Charts -->
+        <div class="charts">
+            <div class="chart-container">
+                <h2>Online vs Offline Orders</h2>
+                <canvas id="deliveryChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>Restaurant Type Popularity</h2>
+                <canvas id="cuisineChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>Cost Distribution for Two</h2>
+                <canvas id="costChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="../static/js/app.js"></script>
+</body>
+</html>
